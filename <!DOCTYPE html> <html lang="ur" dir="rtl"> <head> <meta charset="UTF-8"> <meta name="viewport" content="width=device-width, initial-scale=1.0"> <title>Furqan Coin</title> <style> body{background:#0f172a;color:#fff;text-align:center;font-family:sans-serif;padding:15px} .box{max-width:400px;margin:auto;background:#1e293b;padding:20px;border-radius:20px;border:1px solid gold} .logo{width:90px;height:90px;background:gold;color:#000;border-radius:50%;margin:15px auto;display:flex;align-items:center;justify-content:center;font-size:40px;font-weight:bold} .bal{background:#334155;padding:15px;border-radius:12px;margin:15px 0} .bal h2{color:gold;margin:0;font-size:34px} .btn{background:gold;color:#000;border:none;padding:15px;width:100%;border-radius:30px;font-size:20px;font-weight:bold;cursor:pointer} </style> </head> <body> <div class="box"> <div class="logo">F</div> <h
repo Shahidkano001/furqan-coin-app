@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Furqan Coin</title>
+<style>
+body{background:#0f172a;color:#fff;text-align:center;font-family:sans-serif;padding:15px}
+.box{max-width:400px;margin:auto;background:#1e293b;padding:20px;border-radius:20px;border:1px solid gold}
+.logo{width:90px;height:90px;background:gold;color:#000;border-radius:50%;margin:15px auto;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:bold}
+.bal{background:#334155;padding:15px;border-radius:12px;margin:15px 0}
+.bal h2{color:gold;margin:0;font-size:34px}
+.btn{background:gold;color:#000;border:none;padding:15px;width:100%;border-radius:30px;font-size:20px;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="box">
+<div class="logo">F</div>
+<h1>فرقان کوائن</h1>
+<p>مستقبل کی اسلامی ڈیجیٹل کرنسی</p>
+<div class="bal"><p>آپ کا بیلنس</p><h2 id="bal">0.00 FQ</h2></div>
+<button class="btn" onclick="mine()">⛏️ مائننگ کریں</button>
+<p id="msg" style="color:lightgreen;margin-top:15px;"></p>
+</div>
+<script>
+let b=localStorage.getItem('fq')?parseFloat(localStorage.getItem('fq')):0;
+document.getElementById('bal').innerText=b.toFixed(2)+' FQ';
+function mine(){
+ b+=10;localStorage.setItem('fq',b);
+ document.getElementById('bal').innerText=b.toFixed(2)+' FQ';
+ document.getElementById('msg').innerText='مبارک ہو! 10 FQ مل گئے';
+ setTimeout(()=>{document.getElementById('msg').innerText=''},2000);
+}
+</script>
+</body>
+</html>
