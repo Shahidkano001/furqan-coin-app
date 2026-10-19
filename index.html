@@ -3,51 +3,166 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Furqan Coin - Full Detail - Video Match</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Amiri:wght@400;700&family=Inter:wght@600;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Furqan Coin - Saudi Mining Network</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-*{font-family:'Poppins',sans-serif;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{background:#020513;margin:0;color:#fff;overflow-x:hidden}
-.bg-stars{position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 50% -10%,#13265a 0%,#0a1435 38%,#020513 78%)}
-.bg-stars:after{content:'';position:absolute;inset:0;opacity:.18;background-image:radial-gradient(rgba(255,255,255,.9) 1px,transparent 1.4px);background-size:88px 88px}
-.glass{background:rgba(18,25,68,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.07);border-radius:18px}
-.glass-yellow{border-color:rgba(255,215,0,.18)}
-.gold-text{background:linear-gradient(180deg,#ffeaa0 0%,#ffcc33 45%,#ffb300 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.coin-wrap{perspective:1300px;width:300px;height:300px;margin:18px auto 10px;touch-action:none;cursor:grab}
-.coin-3d{width:100%;height:100%;position:relative;transform-style:preserve-3d;will-change:transform}
-.coin{position:absolute;inset:0;border-radius:50%;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(circle at 32% 28%,#ffffd0 0%,#ffe86a 18%,#ffbf18 38%,#ff9d00 58%,#c77700 82%,#7a4100 100%);border:4px solid #ffde59;box-shadow:0 0 60px rgba(255,195,0,.55),inset 0 0 28px rgba(255,255,255,.7),inset 0 0 70px rgba(160,90,0,.5)}
-.coin-back{transform:rotateY(180deg)}
-.progress{background:linear-gradient(90deg,#ffcc00,#ff7a00)}
-.btn-gold{background:linear-gradient(90deg,#ffcc00 0%,#ff9500 100%);color:#000;font-weight:800;box-shadow:<div class="text-[9px] text-white/35 mt-1.5">Solana SPL Token • 100M Fixed Hard Cap</div>
+body{font-family:'Inter',sans-serif;background:#020a0a;color:white;overflow-x:hidden}
+.amiri{font-family:'Amiri',serif}
+.coin-3d{animation:spin3D 6s linear infinite;transform-style:preserve-3d}
+@keyframes spin3D{0%{transform:rotateY(0deg)}100%{transform:rotateY(360deg)}}
+.glass{background:rgba(255,255,255,0.06);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08)}
+.glow{box-shadow:0 0 60px rgba(212,175,55,0.35), inset 0 0 20px rgba(255,255,255,0.3)}
+#toast{transition: all 0.3s ease; transform: translateY(100px); opacity:0}
+#toast.show{transform: translateY(0); opacity:1}
+</style>
+</head>
+<body class="bg-[#041212] min-h-screen pb-28 max-w-[480px] mx-auto relative">
+<!-- Header -->
+<div class="p-4 flex justify-between items-center border-b border-white/10 sticky top-0 bg-[#041212]/90 backdrop-blur z-20">
+  <div class="flex items-center gap-2">
+    <div class="w-9 h-9 bg-gradient-to-br from-yellow-300 to-yellow-600 rounded-full flex items-center justify-center font-black text-black shadow-lg">F</div>
+    <div><h1 class="font-bold text-[13px]">Furqan Coin</h1><p class="text-[10px] text-white/50 tracking-widest">SAUDI MINING NETWORK</p></div>
+  </div>
+  <button class="bg-yellow-400 hover:bg-yellow-300 text-black px-4 py-1.5 rounded-full text-xs font-bold transition">● Deploy</button>
 </div>
-<div class="coin-wrap" id="wrap">
-<div class="coin-3d" id="coin3d">
-<div class="coin">
-<svg viewBox="0 0 200 200" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none">
-<defs><path id="outer" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
-<text fill="#000" font-family="Inter" font-size="7.2" font-weight="800" letter-spacing="0.6"><textPath href="#outer" xlink:href="#outer" startOffset="0%">PROOF OF ENGAGEMENT MINING • PROOF OF ENGAGEMENT MINING •</textPath></text>
-</svg>
-<div class="relative z-10 flex flex-col items-center">
-<div class="text-[36px] font-black text-black leading-none tracking-tight" style="font-family:'Inter';text-shadow:0 1px 0 rgba(255,255,255,.6)">1 FQN</div>
-<div class="text-[10px] font-bold tracking-[3.2px] text-black/60 mt-1.5" style="font-family:'Inter'">MAKKAH • MADINA</div>
-<div class="text-[24px] font-bold text-black/85 mt-1.5" style="font-family:'Amiri'">واحد فرقان</div>
+
+<!-- User -->
+<div class="m-4 p-3.5 glass rounded-2xl flex justify-between items-center">
+  <div class="flex gap-3 items-center">
+    <img src="https://i.pravatar.cc/100?img=15" class="w-10 h-10 rounded-full border-2 border-yellow-500/50">
+    <div>
+      <p class="font-bold text-[13px]">Shahid Khan <span class="bg-yellow-500/20 text-yellow-400 text-[9px] px-2 py-0.5 rounded-full ml-1 border border-yellow-500/20">PIONEER</span></p>
+      <p class="text-[11px] text-white/40">Shahid_khan</p>
+    </div>
+  </div>
+  <span class="text-yellow-400 text-xs font-bold bg-yellow-400/10 px-2 py-1 rounded-full">+0.192 FQN/hr</span>
 </div>
+
+<!-- Balance & Coin -->
+<div class="text-center mt-2 px-4">
+  <p class="text-white/40 text-[10px] tracking-[0.2em]">FQN UNMINED BALANCE - رصيد غير مستخرج</p>
+  <h2 class="text-[42px] font-extrabold mt-1 tracking-tight"><span id="balance">7.23293</span> <span class="text-yellow-400 text-[22px] font-bold">FQN</span></h2>
+  <p class="text-[11px] text-white/30">Solana SPL Token • 100M Fixed Hard Cap</p>
+  
+  <div class="mt-8 flex justify-center" style="perspective:1200px">
+    <div id="coin" class="coin-3d w-56 h-56 rounded-full bg-gradient-to-br from-[#FFEB99] via-[#D4AF37] to-[#8B6914] border-[6px] border-yellow-100/60 flex items-center justify-center relative glow cursor-grab active:cursor-grabbing select-none">
+      <div class="text-center pointer-events-none">
+        <p class="amiri text-6xl font-black text-[#3d2c00] drop-shadow-sm">فرقان</p>
+        <p class="font-black text-[#3d2c00] mt-1 tracking-widest text-sm">1 FQN</p>
+        <p class="text-[6.5px] text-[#3d2c00]/60 w-36 mx-auto leading-tight mt-1 font-semibold">FURQAN PROTOCOL • SAUDI MINING NETWORK • 100M SUPPLY</p>
+      </div>
+      <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/60 to-transparent pointer-events-none"></div>
+    </div>
+  </div>
+  <p class="text-[10px] text-white/25 mt-4">Tap, Hold, Drag to spin • اسحب للدوران</p>
+
+  <div class="mt-6 p-3 glass rounded-xl flex justify-between items-center">
+    <p class="text-[11px] flex items-center gap-2"><span class="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow shadow-green-400"></span> 24h Session Active • سيشن جاري</p>
+    <p class="text-xs font-mono text-yellow-400 font-bold">⏱ <span id="timer">18:54:22</span></p>
+  </div>
 </div>
-<div class="coin coin-back"><div class="text-v><div class="text-[10px] text-white/30">2/3</div></div>
+
+<!-- Status -->
+<div class="m-4 space-y-2">
+  <div class="p-3.5 glass rounded-xl flex justify-between text-xs"><span>Face Recognition Verified (24h)</span><span class="text-green-400 font-bold cursor-pointer">Re-scan ✓</span></div>
+  <div class="p-3.5 glass rounded-xl flex justify-between text-xs bg-yellow-500/[0.07] border-yellow-500/20"><span class="flex items-center gap-2">🟢 Mining Active • مایننگ جاری</span><span class="text-white/40 text-[11px]">Keep 24h & complete cycle</span></div>
 </div>
+
+<!-- Interlink System -->
+<div class="m-4 p-[1px] rounded-[18px] bg-gradient-to-br from-teal-500/40 to-yellow-500/30">
+  <div class="bg-[#0A1E1E] rounded-[17px] p-4">
+    <div class="flex justify-between items-center"><h3 class="font-bold text-[13px]">Sidra-Style Interlink System</h3><span class="text-[9px] text-teal-300 bg-teal-500/10 px-2 py-1 rounded-full border border-teal-500/20">+0.05 FQN/h BOOST</span></div>
+    <div class="mt-3 bg-black/60 p-3 rounded-xl flex justify-between items-center border border-white/5">
+      <div><p class="text-[9px] text-white/40 tracking-widest">YOUR INTERLINK CODE</p><p class="font-mono font-bold tracking-[0.2em] text-[15px]">FQN-78601</p></div>
+      <p class="text-[10px] text-yellow-400 font-bold bg-yellow-400/10 px-2 py-1 rounded-full">5.00 FQN For Both</p>
+    </div>
+    <div class="grid grid-cols-2 gap-2 mt-3">
+      <button onclick="copyCode()" class="bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 rounded-xl text-[13px] transition">Copy Interlink</button>
+      <button onclick="shareWA()" class="bg-[#25D366] hover:bg-[#20bd5a] font-bold py-3 rounded-xl text-[13px] transition">Share on WhatsApp</button>
+    </div>
+  </div>
 </div>
-<div class="glass p-3.5 mt-3">
-<div class="text-[11px] font-bold">Recent Interlink Rewards • حالیہ انعامات</div>
-<div class="mt-3 space-y-2 text-[10px]"><div class="flex justify-between"><span class="text-white/50">Ahmad Ali joined with your code</span><span class="text-emerald-400 font-bold">+5.00 FQN</span></div><div class="flex justify-between"><span class="text-white/50">Fatima Khan joined with your code</span><span class="text-emerald-400 font-bold">+5.00 FQN</span></div></div>
+
+<!-- Tasks -->
+<div class="m-4 space-y-2">
+  <div class="flex justify-between items-center"><p class="text-[13px] font-bold">Complete Tasks</p><span class="text-[10px] bg-white/10 px-2.5 py-1 rounded-full">+90 FQ Bonus</span></div>
+  <div class="p-3.5 glass rounded-xl flex justify-between items-center text-xs"><span>📺 Subscribe & Earn</span><button class="bg-yellow-500/20 text-yellow-300 px-4 py-1.5 rounded-full border border-yellow-500/20 font-bold hover:bg-yellow-500/30">+50 FQ</button></div>
+  <div class="p-3.5 glass rounded-xl flex justify-between items-center text-xs"><span>✈️ Join Community</span><button class="bg-yellow-500/20 text-yellow-300 px-4 py-1.5 rounded-full border border-yellow-500/20 font-bold hover:bg-yellow-500/30">+30 FQ</button></div>
 </div>
-<div class="glass p-4 mt-3 text-center">
-<div class="text-[15px] leading-relaxed" style="font-family:'Amiri'">تَبَارَكَ الَّذِي نَزَّلَ الْفُرْقَانَ عَلَىٰ عَبْدِهِ لِيَكُونَ لِلْعَالَمِينَ نَذِيرًا</div>
-<div class="text-[8.5px] text-white/30 mt-2 leading-relaxed">"Blessed is He who sent down the Criterion upon His servant that he may be a warner to the worlds. - Surah Al-Furqan (25:1)"</div>
+
+<!-- Quran Verse -->
+<div class="m-4 glass rounded-xl p-4 text-center">
+  <p class="amiri text-[14px] text-yellow-200/90 leading-relaxed">تَبَارَكَ الَّذِي نَزَّلَ الْفُرْقَانَ عَلَىٰ عَبْدِهِ لِيَكُونَ لِلْعَالَمِينَ نَذِيرًا</p>
+  <p class="text-[10px] text-white/30 mt-2">"Blessed is He who sent down the Criterion..." - Surah Al-Furqan 25:1</p>
 </div>
+
+<!-- Bottom Nav -->
+<div class="fixed bottom-0 left-0 right-0 bg-[#020a0a]/95 backdrop-blur border-t border-white/10 flex justify-around py-3.5 text-[11px] max-w-[480px] mx-auto z-30">
+  <span class="text-yellow-400 flex flex-col items-center gap-1 font-bold">⚡ Mining</span>
+  <span class="text-white/30 flex flex-col items-center gap-1">🔗 Interlink</span>
+  <span class="text-white/30 flex flex-col items-center gap-1">👛 Wallet</span>
+  <span class="text-white/30 flex flex-col items-center gap-1">📄 Whitepaper</span>
 </div>
-<div class="fixed bottom-0 left-0 right-0 max-w-[430px] mx-auto bg-[#070b22]/95 backdrop-blur-xl border-t border-white/10 flex justify-around py-3 z-50">
-<button class="flex flex-col items-center text-yellow-400"><span>⚡</span><span class="text-[9px] mt-1 font-bold">Mining</span></button>
-<button class="flex flex-col items-center text-white/35"><span>🔗</span><span class="text-[9px] mt-1">Interlink</span></button>
-<button class="flex flex-col items-center text-white/35"><span>👛</span><span class="
+
+<div id="toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 bg-white text-black px-5 py-2.5 rounded-full text-xs font-bold shadow-2xl z-50">Copied: FQN-78601 • 5 FQN Bonus!</div>
+
+<script>
+let bal=7.23293;
+const balEl=document.getElementById('balance');
+function animateBalance(){
+  bal+=0.0000125;
+  balEl.innerText=bal.toFixed(5);
+  requestAnimationFrame(()=> setTimeout(animateBalance, 90));
+}
+animateBalance();
+
+let sec=18*3600+54*60+22;
+const timerEl=document.getElementById('timer');
+setInterval(()=>{ 
+  sec--; if(sec<0) sec=24*3600;
+  let h=Math.floor(sec/3600),m=Math.floor((sec%3600)/60),s=sec%60;
+  timerEl.innerText=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`
+},1000);
+
+function showToast(msg){
+  const t=document.getElementById('toast');
+  if(msg) t.innerText=msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2500);
+}
+function copyCode(){
+  navigator.clipboard.writeText('FQN-78601').then(()=>showToast('Copied: FQN-78601 - 5 FQN Bonus!'));
+}
+function shareWA(){
+  const text=encodeURIComponent('Join Furqan Coin Mining! 🚀 My Code: FQN-78601 - Earn 5 FQN Bonus https://furqan-coin.web.app');
+  window.open('https://wa.me/?text='+text,'_blank');
+}
+const coin=document.getElementById('coin');let sx=0,rot=0,drag=false,vel=0;
+function startDrag(x){drag=true;sx=x;coin.style.animation='none';vel=0}
+function moveDrag(x){
+  if(!drag)return;
+  let delta=x-sx;
+  vel=delta;
+  rot+=delta*0.8;
+  coin.style.transform=`rotateY(${rot}deg)`;
+  sx=x;
+}
+function endDrag(){
+  drag=false;
+  let momentum=setInterval(()=>{
+    if(Math.abs(vel)<0.1){clearInterval(momentum);coin.style.animation='spin3D 6s linear infinite';return}
+    rot+=vel*0.5; vel*=0.92;
+    coin.style.transform=`rotateY(${rot}deg)`;
+  },16);
+}
+coin.addEventListener('touchstart',e=>startDrag(e.touches[0].clientX),{passive:true});
+window.addEventListener('touchmove',e=>moveDrag(e.touches[0].clientX),{passive:true});
+window.addEventListener('touchend',endDrag);
+coin.addEventListener('mousedown',e=>startDrag(e.clientX));
+window.addEventListener('mousemove',e=>moveDrag(e.clientX));
+window.addEventListener('mouseup',endDrag);
+</script>
+</body>
+</html>
