@@ -1,46 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Furqan Coin</title>
-<style>
-body{background:#020d0d;color:#fff;font-family:sans-serif;text-align:center;margin:0;padding-bottom:80px}
-.header{display:flex;justify-content:space-between;padding:14px;background:#020d0d;border-bottom:1px solid #222}
-.glass{margin:12px;background:#ffffff0f;border:1px solid #ffffff14;border-radius:16px;padding:14px}
-.coin-wrap{perspective:1200px;display:flex;justify-content:center;margin:20px}
-.coin{width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,#FFF8C6,#FFD700,#8B6914);border:8px solid #FFEB8A;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 60px gold}
-.btn{border:0;padding:14px;border-radius:12px;font-weight:900;width:100%;margin-top:10px;cursor:pointer}
-.yellow{background:#FACC15;color:#000} .green{background:#25D366;color:#fff}
-.bottom{position:fixed;bottom:0;left:0;right:0;background:#070f0f;display:flex;justify-content:space-around;padding:10px 0 16px;border-top:1px solid #222}
-.bottom div{opacity:.5;font-size:10px;cursor:pointer} .bottom div.active{opacity:1;color:#FACC15}
-.tab{display:none} .tab.active{display:block}
-#toast{position:fixed;bottom:90px;left:50%;transform:translate(-50%,20px);background:#FACC15;color:#000;padding:10px 20px;border-radius:99px;font-weight:800;opacity:0;transition:.3s} #toast.show{opacity:1;transform:translate(-50%,0)}
-video{width:100%;border-radius:12px;background:#000;margin-top:10px}
-</style>
-</head>
-<body>
-<div class="header"><b>Furqan Coin - SAUDI</b><button class="btn yellow" style="width:auto;padding:6px 12px;margin:0" onclick="toast('🚀 Deploy: Solana 100M Fixed')">● Deploy</button></div>
+// 24 hour timer logic - improved
+useEffect(() => {
+  if (!mining) return;
 
-<div id="t-mining" class="tab active">
-<div style="color:#FACC15;font-family:serif;margin:12px;font-size:18px">تَبَارَكَ الَّذِي نَزَّلَ الْفُرْقَانَ</div>
-<div style="font-size:10px;opacity:.4">UNMINED BALANCE - SINGLE COIN</div>
-<h1 style="font-size:38px"><span id="bal" style="color:#FACC15">7.23293</span> FQN</h1>
-<div class="coin-wrap"><div id="coin" class="coin"><div style="font-size:44px;color:#3d2c00;font-weight:900">فرقان</div><div style="font-size:32px">⚖️</div><div style="color:#3d2c00;font-weight:900">1 FQN</div></div></div>
-<div class="glass"><span style="color:#25D366">● Mining Active</span> <span id="tm" style="color:#FACC15;float:right">18:54:22</span></div>
-<button class="btn yellow" id="mineBtn">⛏️ STOP MINING</button>
-<button class="btn green" onclick="openW()">🔗 Connect MetaMask / Phantom</button>
-<div class="glass">YOUR CODE: <b>FQN-78601</b><button class="btn yellow" onclick="navigator.clipboard.writeText('FQN-78601');toast('Copied FQN-78601')">Copy</button></div>
-</div>
+  const timer = setInterval(() => {
+    setTimeLeft((t) => {
+      if (t <= 1) {
+        setMining(false);
+        return 0;
+      }
+      return t - 1;
+    });
 
-<div id="t-wallet" class="tab">
-<div class="glass"><b>Wallet + KYC + Face</b><div id="wInfo" style="opacity:.6;font-size:12px;margin-top:8px">Not Connected</div><button class="btn yellow" onclick="openW()">Connect Wallet</button><button class="btn green" style="background:#1a2a2a;border:1px solid #333" onclick="document.getElementById('kyc').style.display='block';toast('KYC Open')">🪪 KYC & Face Verify</button></div>
-<div class="glass" id="kyc" style="display:none"><b style="color:#FACC15">Face Recognition Camera</b><video id="vid" autoplay muted playsinline></video><div style="display:flex;gap:8px"><button class="btn yellow" onclick="cam()">Start Camera</button><button class="btn green" onclick="cap()">Capture</button></div><div id="fs" style="font-size:11px;opacity:.6;margin-top:6px">Camera Off</div></div>
-</div>
+    setCoins((c) => c + 0.00001);
+  }, 1000);
 
-<div class="bottom"><div class="active" onclick="showTab('mining',this)">⛏️<br>Mining</div><div onclick="showTab('wallet',this)">👛<br>Wallet</div></div>
-<div id="toast"></div>
-<script>
-let bal=7.23293,rot=0,mining=true,sec=18*3600+54*60+22;
-function toast(m){let t=document.getElementById('toast');t.innerText=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000)}
-function showTab(n,el){document.querySelectorAll('.
+  return () => clearInterval(timer);
+}, [mining]);
